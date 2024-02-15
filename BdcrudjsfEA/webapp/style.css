@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+.cache{
+	display: none;
+}
+
+.custom-form {
+	width: 500px; 
+	border: 1px solid #ccc;
+	text-align: center; 
+	margin-top: 5px;
+	margin-left: 30px;
+}
+			
+.custom-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.action-links {
+  	margin-right: 10px;
+    text-decoration: none;
+ }
+
+ .center-content {
+     text-align: center;
+ }
+			
+		

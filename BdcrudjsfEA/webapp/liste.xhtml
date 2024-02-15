@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+        
+    <f:metadata>
+        <f:event listener="#{etudiantBean.getAllStudents()}" type="preRenderView"></f:event>
+    </f:metadata>
+
+    <h:head>
+        <title>Liste des étudiants</title>
+        <link href="style.css" rel="stylesheet"/>
+        <style>
+        </style>
+    </h:head>
+
+    <h:body>
+        <h1>Liste des étudiants</h1>
+        <h:form>
+            <p:dataTable value="#{etudiantBean.pisteEtudiant}" var="e" style="width:95%; margin:auto;">
+                <p:column styleClass="center-content">
+                    <f:facet name="header">ID</f:facet>
+                    #{e.id}
+                </p:column>
+                
+                <p:column styleClass="center-content">
+                    <f:facet name="header">Nom</f:facet>
+                    #{e.nom}
+                </p:column>
+                
+                <p:column styleClass="center-content">
+                    <f:facet name="header">Prénom</f:facet>
+                    #{e.prenom}
+                </p:column>
+                
+                <p:column styleClass="center-content">
+                    <f:facet name="header">Date de naissance</f:facet>
+                    #{e.datenaiss}
+                </p:column>
+                
+                <p:column styleClass="center-content">
+                    <f:facet name="header">Action</f:facet>
+                    <span class="action-links">
+                        <h:commandLink styleClass="action-links" action="#{etudiantBean.display(e)}" value="Modifier" />
+                    </span>
+                    <h:commandLink styleClass="action-links" action="#{etudiantBean.deleteStudent(e)}" value="Supprimer" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        
+          
+    
+    <div class="#{etudiantBean.set?'cache':'null'} centered-container">
+			<h:form styleClass="custom-form">
+				<h2>Formulaire d'ajout étudiant</h2>
+				
+				<h:message for="nom"/><br />
+				<p:outputLabel for="nom" value="Nom: "/>
+				<p:inputText id="nom" value="#{etudiantBean.etudiant.nom}" placeholder="Entrez un nom" validatorMessage="Entez un nom" rendered="true"/> <br/><br/>
+		
+				
+				<h:message for="prenom"/><br />
+				<p:outputLabel for="prenom" value="Prénom:  "/>
+				<p:inputText id="prenom" value="#{etudiantBean.etudiant.prenom}" placeholder="Entrez un prénom" validatorMessage="Entez un prénom" rendered="true"/> <br/><br/>
+		
+				
+				<h:message for="datenaiss"/><br />
+                <p:outputLabel for="datenaiss" value="Date de naissance: " />
+                <p:calendar id="datenaiss" value="#{etudiantBean.etudiant.datenaiss}" 
+                 validatorMessage="Entez un date de naissance" placeholder="Date de naissance" showOn="button" pattern="yyyy-MM-dd"  /> <br /> <br />
+				
+				<h:commandButton value="Ajouter" action="#{etudiantBean.addStudent()}" styleClass="custom-button" />
+
+			</h:form>
+			
+		</div>
+		    <div class="#{etudiantBean.set?'null':'cache'} centered-container" >
+			<h:form styleClass="custom-form">
+				<h2>Formulaire d'édition étudiant</h2>
+				
+				<h:message for="nom"/><br />
+				<p:outputLabel for="nom" value="Nom: "/>
+				<p:inputText id="nom" value="#{etudiantBean.etudiant.nom}" placeholder="Entrez un nom" validatorMessage="Entez un nom" rendered="true"/> <br/><br/>
+		
+				
+				<h:message for="prenom"/><br />
+				<p:outputLabel for="prenom" value="Prénom:  "/>
+				<p:inputText id="prenom" value="#{etudiantBean.etudiant.prenom}" placeholder="Entrez un prénom" validatorMessage="Entez un prénom" rendered="true"/> <br/><br/>
+		
+				
+				<h:message for="datenaiss"/><br />
+                <p:outputLabel for="datenaiss" value="Date de naissance: " />
+                <p:calendar id="datenaiss" value="#{etudiantBean.etudiant.datenaiss}" 
+                 validatorMessage="Entez une date de naissance" placeholder="Date de naissance" showOn="button" pattern="yyyy-MM-dd"  /> <br /> <br />
+				
+				<h:commandButton action="#{etudiantBean.setStudent()}" value="Modifier"  styleClass="custom-button" />
+
+			</h:form>
+		</div>
+    </h:body>
+</html>

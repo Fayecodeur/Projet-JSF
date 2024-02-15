@@ -1,0 +1,24 @@
+Prénom : Demba 
+Nom : Faye
+email : demba.faye1@unchk.edu.sn
+
+Prénom :  Dieyni
+Nom : Mbodji 
+email : Dieyni.mbodji@unchk.edu.sn
+
+Prénom : Mouhamadou Djiby
+Nom : Dieng
+email : mouhamadoudjiby.dieng@unchk.edu.sn
+
+Prénom : Sira 
+Nom :  Diarrassouba
+email :  sira.diarrassouba@unchk.edu.sn
+
+Prénom : Oumar 
+Nom : Dia
+email : Oumar.dia5@unchk.edu.sn
+
+
+Prénom : Thierno Barra 
+Nom : Diallo
+email: thiernobarra.diallo@unchk.edu.sn
